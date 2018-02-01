@@ -21,4 +21,12 @@ public class GenericTest {
 		List <Contato> lista = cdao.lerTodos();
 		assertNotNull("Não existe um arquivo de dados.", lista);
 	}
+	
+	@Test
+	public void testTest2() {
+		ContatoDaoArquivo cdao = new ContatoDaoArquivo("contatos.txt");
+		Contato fulano = new Contato("fulano", "12345");
+		cdao.inserir(fulano);
+		assertTrue(cdao.existe(fulano));
+	}
 }
